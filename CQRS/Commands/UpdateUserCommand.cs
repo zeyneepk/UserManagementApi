@@ -1,9 +1,11 @@
 using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace UserManagementApi.CQRS.Commands
 {
     public class UpdateUserCommand : IRequest<Unit> 
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "FirstName zorunludur.")]
         public string FirstName { get; set; } = string.Empty;
 
